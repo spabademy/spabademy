@@ -1,6 +1,6 @@
 # vim:set fileencoding=utf-8 ft=python ts=8 sw=4 sts=4 et cindent:
 '''
-Tests the ``dbmigrate.database.migration.driver`` module.
+Tests the ``spabademy.database.migration.driver`` module.
 '''
 # Copyright © 2011  Fabian Knittel <fabian.knittel@avona.com>
 #
@@ -18,14 +18,14 @@ Tests the ``dbmigrate.database.migration.driver`` module.
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA.
 
-from dbmigrate.database.migrations.driver import Driver
+from spabademy.database.migrations.driver import Driver
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy.interfaces import PoolListener
-from dbmigrate.database import table_exists
-from dbmigrate.database.migrations.db import Repository
-from dbmigrate.database.migrations.patch import PatchRepository
-from dbmigrate.database.migrations.patch import Patch
+from spabademy.database import table_exists
+from spabademy.database.migrations.db import Repository
+from spabademy.database.migrations.patch import PatchRepository
+from spabademy.database.migrations.patch import Patch
 from nose.tools import eq_
 
 class SQLiteForeignKeysListener(PoolListener):

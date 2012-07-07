@@ -1,6 +1,6 @@
 # vim:set fileencoding=utf-8 ft=python ts=8 sw=4 sts=4 et cindent:
 '''
-Tests the ``dbmigrate.database.migrations.patch`` module.
+Tests the ``spabademy.database.migrations.patch`` module.
 '''
 # Copyright © 2011  Fabian Knittel <fabian.knittel@avona.com>
 #
@@ -22,12 +22,12 @@ import tempfile
 import shutil
 import os.path
 from nose.tools import eq_
-from dbmigrate.database.migrations.patch import Patch
-from dbmigrate.database.migrations.patch import PatchRepository
-from dbmigrate.database.migrations.patch import DirPatchLoader
-from dbmigrate.database.migrations.patch import DirPatchRepositoryLoader
-from dbmigrate.database.migrations.patch import generate_upgrade_plan
-from dbmigrate.database.migrations.patch import generate_downgrade_plan
+from spabademy.database.migrations.patch import Patch
+from spabademy.database.migrations.patch import PatchRepository
+from spabademy.database.migrations.patch import DirPatchLoader
+from spabademy.database.migrations.patch import DirPatchRepositoryLoader
+from spabademy.database.migrations.patch import generate_upgrade_plan
+from spabademy.database.migrations.patch import generate_downgrade_plan
 
 def test_create_empty_patch():
     """Check whether creating a Patch instance works."""

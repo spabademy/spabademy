@@ -1,9 +1,8 @@
 # vim:set fileencoding=utf-8 ft=python ts=8 sw=4 sts=4 et cindent:
-'''
-``dbmigrate.database.migrations`` contains the flexible PostgreSQL database schema
-migration support.
-'''
-# Copyright © 2010, 2011  Fabian Knittel <fabian.knittel@avona.com>
+
+# spabademy.warnings -- provides a Python 2.6 compat-layer for Python 2.5 users
+#
+# Copyright © 2010  Fabian Knittel <fabian.knittel@avona.com>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -19,16 +18,20 @@ migration support.
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301  USA.
 
-from dbmigrate.database.migrations.db import AppliedPatch
+from __future__ import absolute_import
+import warnings as _warnings # pylint: disable=W0406
 
-class SqlMigrationException(Exception):
-    pass
+if not hasattr(_warnings, 'catch_warnings'):
+    class catch_warnings(object):
+        def __init__(self):
+            self.stored_filters = None
+        def __enter__(self):
+            self.stored_filters = _warnings.filters
+            _warnings.filters = self.stored_filters[:]
 
-def check_repository_has_patches(sess, repository_name, patch_names):
-    not_applied = []
-    for patch_name in patch_names:
-        if not AppliedPatch.is_applied(sess, repository_name, patch_name):
-            not_applied.append(patch_name)
-    if len(not_applied) > 0:
-        raise SqlMigrationException('The repository has an outdated schema '
-                'state and misses the patches %s' % (not_applied))
+        def __exit__(self, *exc_info):
+            _warnings.filters = self.stored_filters
+else:
+    from warnings import catch_warnings #@UnusedImport
+
+from warnings import filterwarnings #@UnusedImport pylint: disable=W0611

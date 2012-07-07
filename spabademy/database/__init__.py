@@ -27,8 +27,8 @@ import sqlalchemy.exc
 import sqlalchemy.engine.url
 import sqlalchemy.sql
 from copy import deepcopy
-from dbmigrate.warnings import filterwarnings
-from dbmigrate.database.migrations import check_repository_has_patches
+from spabademy.warnings import filterwarnings
+from spabademy.database.migrations import check_repository_has_patches
 from pkg_resources import iter_entry_points
 
 

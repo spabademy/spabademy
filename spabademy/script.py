@@ -24,12 +24,12 @@ from sqlalchemy.engine.url import make_url
 from sqlalchemy.engine import create_engine
 from sqlalchemy.orm.session import sessionmaker
 from sqlalchemy import exc as sa_exc
-from dbmigrate.database import build_description_url
-from dbmigrate.database.migrations.driver import Driver
-from dbmigrate.database.migrations.driver import PatchFailedException
-from dbmigrate.database.migrations.patch import DirPatchLoader
-from dbmigrate.database.migrations.patch import DirPatchRepositoryLoader
-from dbmigrate import TextUserHostPasswordPrompt
+from spabademy.database import build_description_url
+from spabademy.database.migrations.driver import Driver
+from spabademy.database.migrations.driver import PatchFailedException
+from spabademy.database.migrations.patch import DirPatchLoader
+from spabademy.database.migrations.patch import DirPatchRepositoryLoader
+from spabademy import TextUserHostPasswordPrompt
 
 PATCH_REPO_PATH = os.path.join('sql_patches')
 
@@ -87,14 +87,14 @@ def cmd_convert_init(repo, driver, **_):
         # We special case this, because our user base is very small and all
         # known repos are at version 11.
         patch_names = [
-            '001_initial',
-            '004_role_check_instead_of_user_check',
-            '005_fix_add_print_account_log_subtotal_and_print_account_update',
-            '006_split_user_create_and_snack_account_creation',
-            '007_fix_user_create_and_add_user_trans_log_subtotaling',
-            '008_user_subtotals_fix',
-            '009_print_accounts_differentiate_between_existing_and_open',
-            '010_add_user_close',
+#            '001_initial',
+#            '004_role_check_instead_of_user_check',
+#            '005_fix_add_print_account_log_subtotal_and_print_account_update',
+#            '006_split_user_create_and_snack_account_creation',
+#            '007_fix_user_create_and_add_user_trans_log_subtotaling',
+#            '008_user_subtotals_fix',
+#            '009_print_accounts_differentiate_between_existing_and_open',
+#            '010_add_user_close#',
             '011_add_configuration',
         ]
         patches = repo.lookup_patch_names(patch_names)

@@ -19,14 +19,14 @@
 
 from __future__ import with_statement
 
-from dbmigrate.database.migrations.db import create_tables
-from dbmigrate.database.migrations.db import drop_tables
-from dbmigrate.database.migrations.db import Repository
-from dbmigrate.database.migrations.db import AppliedPatch
-from dbmigrate.database.migrations.db import execute_script
-from dbmigrate.database.migrations.patch import Patch
-from dbmigrate.database.migrations.patch import generate_upgrade_plan
-from dbmigrate.database.migrations.patch import generate_downgrade_plan
+from spabademy.database.migrations.db import create_tables
+from spabademy.database.migrations.db import drop_tables
+from spabademy.database.migrations.db import Repository
+from spabademy.database.migrations.db import AppliedPatch
+from spabademy.database.migrations.db import execute_script
+from spabademy.database.migrations.patch import Patch
+from spabademy.database.migrations.patch import generate_upgrade_plan
+from spabademy.database.migrations.patch import generate_downgrade_plan
 from sqlalchemy.exc import DatabaseError
 
 class PatchFailedException(Exception):
