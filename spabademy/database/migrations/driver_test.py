@@ -52,8 +52,8 @@ class TestDriver(object):
         Session = sessionmaker(bind=self.engine)
         self.sess = Session()
 
-        self.patchrepo = PatchRepository()
-        self.driver = Driver(self.sess, 'test_repo', self.patchrepo)
+        self.patchrepo = PatchRepository(repo_name='test_repo')
+        self.driver = Driver(self.sess, self.patchrepo)
 
         self.patch1 = None
         self.patch2 = None
@@ -120,7 +120,8 @@ class TestDriver(object):
 
     def test_uninit_other_repo(self):
         self.driver.init_repo()
-        other_driver = Driver(self.sess, 'test_repo2', self.patchrepo)
+        other_patchrepo = PatchRepository(repo_name='test_repo2')
+        other_driver = Driver(self.sess, other_patchrepo)
         other_driver.init_repo()
         self.assert_tables_exist(['migrate_repositories',
                 'migrate_applied_patches'])

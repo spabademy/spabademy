@@ -83,8 +83,9 @@ class PatchRepository(object):
     applied.
     '''
 
-    def __init__(self):
+    def __init__(self, repo_name=None):
         self.patches = {}
+        self.repo_name = repo_name
 
     def add_patch(self, patch):
         self.patches[patch.name] = patch
