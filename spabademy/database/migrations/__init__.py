@@ -3,7 +3,7 @@
 ``spabademy.database.migrations`` contains the flexible PostgreSQL database schema
 migration support.
 '''
-# Copyright © 2010, 2011  Fabian Knittel <fabian.knittel@avona.com>
+# Copyright © 2010, 2011  Fabian Knittel <fabian.knittel@lettink.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

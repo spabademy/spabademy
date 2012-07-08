@@ -4,7 +4,7 @@ This module provides the basics of database connection handling and
 versioning.
 """
 # Copyright © 2010  Philipp Kern <pkern@debian.org>
-# Copyright © 2010, 2011  Fabian Knittel <fabian.knittel@avona.com>
+# Copyright © 2010, 2011  Fabian Knittel <fabian.knittel@lettink.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

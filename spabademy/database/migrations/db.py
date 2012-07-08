@@ -3,7 +3,7 @@
 Contains the methods and classes used for interaction with the database and for
 storage of the repository's state.
 '''
-# Copyright © 2011  Fabian Knittel <fabian.knittel@avona.com>
+# Copyright © 2011  Fabian Knittel <fabian.knittel@lettink.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by

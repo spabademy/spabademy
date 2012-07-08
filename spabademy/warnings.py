@@ -2,7 +2,7 @@
 
 # spabademy.warnings -- provides a Python 2.6 compat-layer for Python 2.5 users
 #
-# Copyright © 2010  Fabian Knittel <fabian.knittel@avona.com>
+# Copyright © 2010  Fabian Knittel <fabian.knittel@lettink.de>
 #
 # This program is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
