@@ -87,8 +87,11 @@ class AppliedPatch(_Base):
 DB_CLASSES = [Repository, AppliedPatch]
 
 def create_tables(bind, checkfirst=True):
+    dialect = bind.engine.dialect
     for dbcls in DB_CLASSES:
         dbcls.__table__.create(bind, checkfirst=checkfirst)
+        if dialect.name == 'postgresql':
+            bind.execute('GRANT SELECT ON %s TO PUBLIC' % dbcls.__table__.name)
 
 def drop_tables(bind, checkfirst=True):
     for dbcls in reversed(DB_CLASSES):
